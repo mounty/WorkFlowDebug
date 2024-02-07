@@ -1,0 +1,60 @@
+﻿<Process Name="Sample" CanBeInlined="false" Tags="">
+	<Designer />
+	<Parameters>
+		<Parameter Name="Sampe" Type="String" Purpose="Persistence" InitialValue="Sample" />
+	</Parameters>
+	<Activities>
+		<Activity Name="Start" IsInitial="True" IsFinal="False" IsForSetState="True" IsAutoSchemeUpdate="True">
+			<Implementation>
+				<ActionRef Order="1" NameRef="Start" />
+			</Implementation>
+			<Designer X="50" Y="190" />
+		</Activity>
+		<Activity Name="Execute" IsInitial="False" IsFinal="False" IsForSetState="True" IsAutoSchemeUpdate="True">
+			<Implementation>
+				<ActionRef Order="1" NameRef="Execute" />
+			</Implementation>
+			<Designer X="380" Y="190" />
+		</Activity>
+		<Activity Name="Final" IsInitial="False" IsFinal="True" IsForSetState="True" IsAutoSchemeUpdate="True">
+			<Implementation>
+				<ActionRef Order="1" NameRef="Final" />
+			</Implementation>
+			<Designer X="680" Y="190" />
+		</Activity>
+	</Activities>
+	<Transitions>
+		<Transition Name="Start_Execute_1" To="Execute" From="Start" Classifier="NotSpecified" AllowConcatenationType="And" RestrictConcatenationType="And" ConditionsConcatenationType="And" IsFork="false" MergeViaSetState="false" DisableParentStateControl="false">
+			<Triggers>
+				<Trigger Type="Auto" />
+			</Triggers>
+			<Conditions>
+				<Condition Type="Always" />
+			</Conditions>
+			<Designer />
+		</Transition>
+		<Transition Name="Execute_Final_1" To="Final" From="Execute" Classifier="NotSpecified" AllowConcatenationType="And" RestrictConcatenationType="And" ConditionsConcatenationType="And" IsFork="false" MergeViaSetState="false" DisableParentStateControl="false">
+			<Triggers>
+				<Trigger Type="Auto" />
+			</Triggers>
+			<Conditions>
+				<Condition Type="Always" />
+			</Conditions>
+			<Designer />
+		</Transition>
+	</Transitions>
+	<CodeActions>
+		<CodeAction Name="Start" Type="Action" IsGlobal="False" IsAsync="True">
+			<ActionCode><![CDATA[string str ="Hello";]]></ActionCode>
+			<Usings><![CDATA[BLX.ExternalLib;System.Threading.Tasks;OptimaJet.WorkflowServer.Model.PostgreSQL;System.Net;OptimaJet.WorkflowServer.License;OptimaJet.WorkflowServer.Services.MongoDB;System.Net.Http.Headers;OptimaJet.WorkflowServer.Forms;OptimaJet.Workflow;BLX.PifOptivaTransform;OptimaJet.WorkflowServer.Initializing;OptimaJet.WorkflowServer.Logging;Blx.RabbitMQ;FsWsProject;FsWsAdmin;OptimaJet.WorkflowServer;OptimaJet.Workflow.Core.Runtime;System.Collections.Concurrent;FxResources.System.Net.Http;System.Dynamic;System.Net.Security;OptimaJet.WorkflowServer.Services.Oracle;FsWsFormula;OptimaJet.WorkflowServer.Services;System.Linq;System.IO;OptimaJet.WorkflowServer.Services.MsSql;Microsoft.CSharp.RuntimeBinder;FsWsWorkflow;FsWsItem;FsWsServer;OptimaJet.WorkflowServer.Hubs;OptimaJet.WorkflowServer.Services.MySql;System.Collections;OptimaJet.WorkflowServer.Services.Cors;OptimaJet.WorkflowServer.BackgoundTasks;OptimaJet.WorkflowServer.Model.Oracle;System;System.Collections.Generic;System.Threading;Microsoft.CSharp;OptimaJet.WorkflowServer.Model.MongoDB;OptimaJet.WorkflowServer.Model.MySQL;OptimaJet.WorkflowServer.Services.PostgreSql;OptimaJet.WorkflowServer.Model;System.Net.Http;System.Net.Mail;System.Net.Mime;OptimaJet.Workflow.Core.Model;Blx.OptivaClient;OptimaJet.WorkflowServer.Model.MSSQL;]]></Usings>
+		</CodeAction>
+		<CodeAction Name="Execute" Type="Action" IsGlobal="False" IsAsync="False">
+			<ActionCode><![CDATA[string str ="execute";]]></ActionCode>
+			<Usings><![CDATA[BLX.ExternalLib;System.Threading.Tasks;OptimaJet.WorkflowServer.Model.PostgreSQL;System.Net;OptimaJet.WorkflowServer.License;OptimaJet.WorkflowServer.Services.MongoDB;System.Net.Http.Headers;OptimaJet.WorkflowServer.Forms;OptimaJet.Workflow;BLX.PifOptivaTransform;OptimaJet.WorkflowServer.Initializing;OptimaJet.WorkflowServer.Logging;Blx.RabbitMQ;FsWsProject;FsWsAdmin;OptimaJet.WorkflowServer;OptimaJet.Workflow.Core.Runtime;System.Collections.Concurrent;FxResources.System.Net.Http;System.Dynamic;System.Net.Security;OptimaJet.WorkflowServer.Services.Oracle;FsWsFormula;OptimaJet.WorkflowServer.Services;System.Linq;System.IO;OptimaJet.WorkflowServer.Services.MsSql;Microsoft.CSharp.RuntimeBinder;FsWsWorkflow;FsWsItem;FsWsServer;OptimaJet.WorkflowServer.Hubs;OptimaJet.WorkflowServer.Services.MySql;System.Collections;OptimaJet.WorkflowServer.Services.Cors;OptimaJet.WorkflowServer.BackgoundTasks;OptimaJet.WorkflowServer.Model.Oracle;System;System.Collections.Generic;System.Threading;Microsoft.CSharp;OptimaJet.WorkflowServer.Model.MongoDB;OptimaJet.WorkflowServer.Model.MySQL;OptimaJet.WorkflowServer.Services.PostgreSql;OptimaJet.WorkflowServer.Model;System.Net.Http;System.Net.Mail;System.Net.Mime;OptimaJet.Workflow.Core.Model;Blx.OptivaClient;OptimaJet.WorkflowServer.Model.MSSQL;]]></Usings>
+		</CodeAction>
+		<CodeAction Name="Final" Type="Action" IsGlobal="False" IsAsync="True">
+			<ActionCode><![CDATA[string str ="Final";]]></ActionCode>
+			<Usings><![CDATA[BLX.ExternalLib;System.Threading.Tasks;OptimaJet.WorkflowServer.Model.PostgreSQL;System.Net;OptimaJet.WorkflowServer.License;OptimaJet.WorkflowServer.Services.MongoDB;System.Net.Http.Headers;OptimaJet.WorkflowServer.Forms;OptimaJet.Workflow;BLX.PifOptivaTransform;OptimaJet.WorkflowServer.Initializing;OptimaJet.WorkflowServer.Logging;Blx.RabbitMQ;FsWsProject;FsWsAdmin;OptimaJet.WorkflowServer;OptimaJet.Workflow.Core.Runtime;System.Collections.Concurrent;FxResources.System.Net.Http;System.Dynamic;System.Net.Security;OptimaJet.WorkflowServer.Services.Oracle;FsWsFormula;OptimaJet.WorkflowServer.Services;System.Linq;System.IO;OptimaJet.WorkflowServer.Services.MsSql;Microsoft.CSharp.RuntimeBinder;FsWsWorkflow;FsWsItem;FsWsServer;OptimaJet.WorkflowServer.Hubs;OptimaJet.WorkflowServer.Services.MySql;System.Collections;OptimaJet.WorkflowServer.Services.Cors;OptimaJet.WorkflowServer.BackgoundTasks;OptimaJet.WorkflowServer.Model.Oracle;System;System.Collections.Generic;System.Threading;Microsoft.CSharp;OptimaJet.WorkflowServer.Model.MongoDB;OptimaJet.WorkflowServer.Model.MySQL;OptimaJet.WorkflowServer.Services.PostgreSql;OptimaJet.WorkflowServer.Model;System.Net.Http;System.Net.Mail;System.Net.Mime;OptimaJet.Workflow.Core.Model;Blx.OptivaClient;OptimaJet.WorkflowServer.Model.MSSQL;]]></Usings>
+		</CodeAction>
+	</CodeActions>
+</Process>
